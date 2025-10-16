@@ -21,7 +21,6 @@
     "post-upgrade": "pnpx projen post-upgrade",
     "pre-compile": "pnpx projen pre-compile",
     "prettier": "pnpx projen prettier",
-    "publish:git": "pnpx projen publish:git",
     "release": "pnpx projen release",
     "test": "pnpx projen test",
     "test:watch": "pnpx projen test:watch",

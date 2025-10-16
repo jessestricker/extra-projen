@@ -24,6 +24,7 @@ const project = new JsiiProject({
   // projen
   projenCommand: "pnpx projen",
   projenrcTs: true,
+  sampleCode: false,
 
   // formatting & linting
   eslintOptions: { dirs: ["src"], prettier: true },

@@ -37,8 +37,6 @@ junit.xml
 /dist/changelog.md
 /dist/version.txt
 !/.github/workflows/upgrade-main.yml
-!/.prettierignore
-!/.prettierrc.yml
 !/.npmrc
 !/test/
 !/tsconfig.dev.json
@@ -48,4 +46,6 @@ junit.xml
 !/.eslintrc.json
 .jsii
 tsconfig.json
+!/.prettierignore
+!/.prettierrc.yml
 !/.projenrc.ts

@@ -3,6 +3,7 @@ import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
 import { ReleaseTrigger } from "projen/lib/release";
+import { Prettier } from "./src/javascript/prettier";
 
 const project = new JsiiProject({
   // meta
@@ -25,10 +26,7 @@ const project = new JsiiProject({
   projenrcTs: true,
 
   // formatting & linting
-  prettier: true,
-  prettierOptions: {
-    yaml: true,
-  },
+  eslintOptions: { dirs: ["src"], prettier: true },
 
   // github
   repositoryUrl: "https://github.com/jessestricker/extra-projen.git",
@@ -48,17 +46,6 @@ const project = new JsiiProject({
   releaseToNpm: true,
 });
 
-// prettier
-project.prettier?.ignoreFile?.exclude(`/${project.package.lockFile}`);
-const prettierTask = project.addTask("prettier", {
-  exec: "prettier --write .",
-  description: "Format project files with prettier",
-});
-project.testTask.spawn(prettierTask);
-
-// ignore generated files -- MUST BE LAST BEFORE SYNTH
-for (const file of project.files) {
-  project.prettier?.ignoreFile?.exclude(`/${file.path}`);
-}
+new Prettier(project, { yaml: true });
 
 project.synth();

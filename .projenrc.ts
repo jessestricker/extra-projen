@@ -2,40 +2,63 @@ import { ReleasableCommits } from "projen";
 import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
+import { ReleaseTrigger } from "projen/lib/release";
 
 const project = new JsiiProject({
-  name: "projen",
-  githubOptions: {
-    mergify: false,
-  },
-  projenCredentials: GithubCredentials.fromApp(),
+  // meta
+  name: "extra-projen",
   description: "More projects and components for projen.",
-  homepage: "https://github.com/jessestricker/projen",
   keywords: ["projen"],
+  author: "Jesse Stricker",
+  authorAddress: "git@jessestricker.de",
+  packageName: "@jessestricker/extra-projen",
   npmAccess: NpmAccess.PUBLIC,
-  npmTrustedPublishing: true,
+
+  // node package & dependencies
   packageManager: NodePackageManager.PNPM,
-  packageName: "@jessestricker/projen",
-  peerDeps: ["constructs@^10", "projen@>=0.97.0 <1.0.0"],
-  releasableCommits: ReleasableCommits.featuresAndFixes(),
-  defaultReleaseBranch: "main",
+  peerDeps: ["constructs@^10", "projen@>=0.98.1 <1.0.0"],
+  jsiiVersion: "~5.9.0",
+  docgen: false,
+
+  // projen
+  projenCommand: "pnpx projen",
+  projenrcTs: true,
+
+  // formatting & linting
   prettier: true,
   prettierOptions: {
     yaml: true,
   },
-  pullRequestTemplate: false,
-  releaseToNpm: true,
-  workflowGitIdentity: {
-    name: "github-actions[bot]",
-    email: "41898282+github-actions[bot]@users.noreply.github.com",
+
+  // github
+  repositoryUrl: "https://github.com/jessestricker/extra-projen.git",
+  githubOptions: {
+    mergify: false,
   },
+  pullRequestTemplate: false,
+  projenCredentials: GithubCredentials.fromApp(),
   workflowNodeVersion: "24",
   workflowPackageCache: true,
-  projenrcTs: true,
-  author: "Jesse Stricker",
-  authorAddress: "git@jessestricker.de",
-  repositoryUrl: "https://github.com/jessestricker/projen.git",
-  jsiiVersion: "~5.9.0",
+
+  // releasing & publishing
+  defaultReleaseBranch: "main",
+  releaseTrigger: ReleaseTrigger.manual(),
+  releasableCommits: ReleasableCommits.featuresAndFixes(),
+  npmTrustedPublishing: true,
+  releaseToNpm: true,
 });
+
+// prettier
+project.prettier?.ignoreFile?.exclude(`/${project.package.lockFile}`);
+const prettierTask = project.addTask("prettier", {
+  exec: "prettier --write .",
+  description: "Format project files with prettier",
+});
+project.testTask.spawn(prettierTask);
+
+// ignore generated files -- MUST BE LAST BEFORE SYNTH
+for (const file of project.files) {
+  project.prettier?.ignoreFile?.exclude(`/${file.path}`);
+}
 
 project.synth();

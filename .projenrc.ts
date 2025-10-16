@@ -1,4 +1,3 @@
-import { ReleasableCommits } from "projen";
 import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
@@ -42,7 +41,6 @@ const project = new JsiiProject({
   // releasing & publishing
   defaultReleaseBranch: "main",
   releaseTrigger: ReleaseTrigger.workflowDispatch(),
-  releasableCommits: ReleasableCommits.featuresAndFixes(),
   releaseToNpm: true,
 });
 

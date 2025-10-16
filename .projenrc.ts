@@ -41,6 +41,7 @@ const project = new JsiiProject({
   // releasing & publishing
   defaultReleaseBranch: "main",
   releaseTrigger: ReleaseTrigger.workflowDispatch(),
+  npmTrustedPublishing: true,
   releaseToNpm: true,
 });
 

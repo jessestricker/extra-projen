@@ -1,1 +1,1 @@
-export * as javascript from "./javascript/prettier";
+export * as javascript from "./javascript";

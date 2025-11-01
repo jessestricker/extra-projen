@@ -1,7 +1,6 @@
 import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
-import { ReleaseTrigger } from "projen/lib/release";
 import { Prettier } from "./src/javascript/prettier";
 
 const project = new JsiiProject({
@@ -40,7 +39,6 @@ const project = new JsiiProject({
 
   // releasing & publishing
   defaultReleaseBranch: "main",
-  releaseTrigger: ReleaseTrigger.workflowDispatch(),
   npmTrustedPublishing: true,
   releaseToNpm: true,
 });

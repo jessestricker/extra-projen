@@ -15,7 +15,7 @@ import {
 export class Prettier extends BuiltinPrettier {
   readonly task: Task;
 
-  constructor(project: NodeProject, options: PrettierOptions) {
+  constructor(project: NodeProject, options: PrettierOptions = {}) {
     super(project, options);
 
     // ignore package lockfile

@@ -27,7 +27,8 @@ const project = new JsiiProject({
   // formatting & linting
   eslintOptions: { dirs: ["src"], prettier: true },
 
-  // github
+  // git & github
+  gitignore: [".idea/"],
   repositoryUrl: "https://github.com/jessestricker/extra-projen.git",
   githubOptions: {
     mergify: false,

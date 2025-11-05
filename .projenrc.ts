@@ -2,6 +2,7 @@ import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
 import { Prettier } from "./src/javascript/prettier";
+import { GeneratePackageExports } from "./src/typescript/generate-package-exports";
 
 const project = new JsiiProject({
   // meta
@@ -45,5 +46,6 @@ const project = new JsiiProject({
 });
 
 new Prettier(project, { yaml: true });
+new GeneratePackageExports(project);
 
 project.synth();

@@ -97,6 +97,14 @@
       "type": "build"
     },
     {
+      "name": "@dprint/formatter",
+      "type": "bundled"
+    },
+    {
+      "name": "@dprint/typescript",
+      "type": "bundled"
+    },
+    {
       "name": "constructs",
       "version": "^10",
       "type": "peer"

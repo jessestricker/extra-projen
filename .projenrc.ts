@@ -1,3 +1,4 @@
+import { YamlFile } from "projen";
 import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
@@ -19,6 +20,7 @@ const project = new JsiiProject({
   peerDeps: ["constructs@^10", "projen@>=0.98.1 <1.0.0"],
   jsiiVersion: "~5.9.0",
   docgen: false,
+  bundledDeps: ["@dprint/formatter", "@dprint/typescript"],
 
   // projen
   projenCommand: "pnpx projen",
@@ -45,6 +47,9 @@ const project = new JsiiProject({
   releaseToNpm: true,
 });
 
+new YamlFile(project, "pnpm-workspace.yaml", {
+  obj: { nodeLinker: "hoisted" },
+});
 new Prettier(project, { yaml: true });
 new GeneratePackageExports(project);
 

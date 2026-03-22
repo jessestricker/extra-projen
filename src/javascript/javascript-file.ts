@@ -46,29 +46,29 @@ export class JavaScriptFile extends TextFile {
     }
 
     if (this.format) {
-      content = formatTypeScript(content, this.path);
+      content = formatJavaScript(content, this.path);
     }
 
     return content;
   }
 }
 
-let TYPESCRIPT_FORMATTER: dprintFormatter.Formatter | undefined = undefined;
+let FORMATTER: dprintFormatter.Formatter | undefined = undefined;
 
 /**
- * Formats TypeScript (and JavaScript) source code using [dprint](https://github.com/dprint/dprint-plugin-typescript).
+ * Formats JavaScript (or TypeScript) code using [dprint](https://github.com/dprint/dprint-plugin-typescript).
  *
- * @param text The source code text to format.
- * @param filePath The path the file the source code is from. Only used for configuring the dprint formatter, does not need to actually exist.
- * @returns The formated source code.
+ * @param text The text to format.
+ * @param filePath The path of the source file. Only used for configuring the dprint formatter, does not need to actually exist.
+ * @returns The formated text.
  */
-export function formatTypeScript(text: string, filePath: string): string {
-  if (TYPESCRIPT_FORMATTER === undefined) {
-    TYPESCRIPT_FORMATTER = dprintFormatter.createFromBuffer(
+export function formatJavaScript(text: string, filePath: string): string {
+  if (FORMATTER === undefined) {
+    FORMATTER = dprintFormatter.createFromBuffer(
       fs.readFileSync(dprintTypeScript.getPath()),
     );
   }
-  return TYPESCRIPT_FORMATTER.formatText({
+  return FORMATTER.formatText({
     fileText: text,
     filePath,
   });

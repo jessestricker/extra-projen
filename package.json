@@ -62,6 +62,14 @@
     "constructs": "^10",
     "projen": ">=0.98.1 <1.0.0"
   },
+  "dependencies": {
+    "@dprint/formatter": "^0.5.1",
+    "@dprint/typescript": "^0.95.15"
+  },
+  "bundledDependencies": [
+    "@dprint/formatter",
+    "@dprint/typescript"
+  ],
   "pnpm": {},
   "keywords": [
     "projen"

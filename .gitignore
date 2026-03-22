@@ -48,6 +48,7 @@ junit.xml
 !/.eslintrc.json
 .jsii
 tsconfig.json
+!/pnpm-workspace.yaml
 !/.prettierignore
 !/.prettierrc.yml
 !/.projenrc.ts

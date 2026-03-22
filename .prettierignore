@@ -16,4 +16,5 @@
 /.projen/tasks.json
 /LICENSE
 /package.json
+/pnpm-workspace.yaml
 /tsconfig.dev.json

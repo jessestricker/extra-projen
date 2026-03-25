@@ -76,6 +76,7 @@ new YamlFile(project, "pnpm-workspace.yaml", {
   obj: {
     overrides: {
       "flatted@<3.4.2": "^3.4.2", // CVE-2026-33228
+      "picomatch@<2.3.2": "^2.3.2", // CVE-2026-33671
     },
     strictPeerDependencies: true,
   },

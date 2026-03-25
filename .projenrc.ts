@@ -74,6 +74,9 @@ new GeneratePackageExports(project);
 
 new YamlFile(project, "pnpm-workspace.yaml", {
   obj: {
+    overrides: {
+      "flatted@<3.4.2": "^3.4.2", // CVE-2026-33228
+    },
     strictPeerDependencies: true,
   },
 });

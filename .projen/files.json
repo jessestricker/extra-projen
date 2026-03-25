@@ -15,6 +15,7 @@
     ".projen/tasks.json",
     "eslint.config.mjs",
     "LICENSE",
+    "pnpm-workspace.yaml",
     "tsconfig.dev.json",
     "tsconfig.json"
   ],

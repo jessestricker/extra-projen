@@ -16,5 +16,6 @@
 /eslint.config.mjs
 /LICENSE
 /package.json
+/pnpm-workspace.yaml
 /tsconfig.dev.json
 /tsconfig.json

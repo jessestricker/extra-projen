@@ -1,4 +1,4 @@
-import { ReleasableCommits } from "projen";
+import { ReleasableCommits, YamlFile } from "projen";
 import { GithubCredentials } from "projen/lib/github";
 import {
   NodePackageManager,
@@ -71,5 +71,11 @@ new Prettier(project, {
 });
 
 new GeneratePackageExports(project);
+
+new YamlFile(project, "pnpm-workspace.yaml", {
+  obj: {
+    strictPeerDependencies: true,
+  },
+});
 
 project.synth();

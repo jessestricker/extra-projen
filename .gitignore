@@ -49,4 +49,5 @@ junit.xml
 !/eslint.config.mjs
 !/.prettierignore
 !/.prettierrc.yml
+!/pnpm-workspace.yaml
 !/.projenrc.ts

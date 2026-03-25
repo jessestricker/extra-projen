@@ -54,7 +54,7 @@
   "dependencies": {
     "@dprint/formatter": "^0.5.1",
     "@dprint/typescript": "^0.95.15",
-    "type-fest": "^4.41.0"
+    "type-fest": "^5.5.0"
   },
   "pnpm": {},
   "keywords": [

@@ -1,4 +1,7 @@
 // https://github.com/eslint/rewrite/blob/main/packages/core/src/types.ts#L742
+
+import { JsonValue } from "type-fest";
+
 /**
  * An ESLint configuration object.
  *
@@ -36,14 +39,13 @@ export interface EslintConfigObject {
    * An object containing the configured rules. When files or ignores are specified,
    * these rule configurations are only available to the matching files.
    */
-  readonly rules?: EslintRulesConfig;
+  readonly rules?: Record<string, EslintRuleConfig>;
 }
 
-// https://github.com/eslint/rewrite/blob/core-v1.1.1/packages/core/src/types.ts#L727
-export type EslintRulesConfig = Record<string, EslintRuleConfig>;
-
 // https://github.com/eslint/rewrite/blob/core-v1.1.1/packages/core/src/types.ts#L719
-export type EslintRuleConfig = EslintSeverity | (EslintSeverity | unknown)[];
+export type EslintRuleConfig =
+  | EslintSeverity
+  | readonly [EslintSeverity, ...JsonValue[]];
 
 // https://github.com/eslint/rewrite/blob/core-v1.1.1/packages/core/src/types.ts#L675
 export type EslintSeverity = "off" | "warn" | "error";

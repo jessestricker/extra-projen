@@ -1,8 +1,12 @@
 import { ReleasableCommits } from "projen";
 import { GithubCredentials } from "projen/lib/github";
-import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
-import { Eslint, Prettier } from "./src/javascript";
+import {
+  NodePackageManager,
+  NpmAccess,
+  UpgradeDependenciesSchedule,
+} from "projen/lib/javascript";
 import { TypeScriptProject } from "projen/lib/typescript";
+import { Eslint, Prettier } from "./src/javascript";
 import { GeneratePackageExports } from "./src/typescript/generate-package-exports";
 
 const project = new TypeScriptProject({
@@ -41,6 +45,12 @@ const project = new TypeScriptProject({
   projenCredentials: GithubCredentials.fromApp(),
   workflowNodeVersion: "24",
   workflowPackageCache: true,
+  depsUpgradeOptions: {
+    workflowOptions: {
+      assignees: ["jessestricker"],
+      schedule: UpgradeDependenciesSchedule.WEEKLY,
+    },
+  },
 
   // releasing & publishing
   releasableCommits: ReleasableCommits.featuresAndFixes(),

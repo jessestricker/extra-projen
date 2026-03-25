@@ -1,3 +1,4 @@
+import { ReleasableCommits } from "projen";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
 import { Eslint, Prettier } from "./src/javascript";
@@ -42,6 +43,7 @@ const project = new TypeScriptProject({
   workflowPackageCache: true,
 
   // releasing & publishing
+  releasableCommits: ReleasableCommits.featuresAndFixes(),
   defaultReleaseBranch: "main",
   npmTrustedPublishing: true,
   releaseToNpm: true,

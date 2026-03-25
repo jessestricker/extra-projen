@@ -41,13 +41,11 @@ junit.xml
 !/.github/workflows/upgrade-main.yml
 !/.npmrc
 !/test/
+!/tsconfig.json
 !/tsconfig.dev.json
 !/src/
 /lib
 /dist/
-.jsii
-tsconfig.json
-!/pnpm-workspace.yaml
 !/eslint.config.mjs
 !/.prettierignore
 !/.prettierrc.yml

@@ -9,14 +9,11 @@
     "build": "pnpx projen build",
     "bump": "pnpx projen bump",
     "clobber": "pnpx projen clobber",
-    "compat": "pnpx projen compat",
     "compile": "pnpx projen compile",
     "default": "pnpx projen default",
     "eject": "pnpx projen eject",
     "eslint": "pnpx projen eslint",
     "package": "pnpx projen package",
-    "package-all": "pnpx projen package-all",
-    "package:js": "pnpx projen package:js",
     "post-compile": "pnpx projen post-compile",
     "post-upgrade": "pnpx projen post-upgrade",
     "pre-compile": "pnpx projen pre-compile",
@@ -48,10 +45,6 @@
     "eslint-plugin-prettier": "^5.5.5",
     "jest": "^30.3.0",
     "jest-junit": "^16",
-    "jsii": "~5.9.0",
-    "jsii-diff": "^1.127.0",
-    "jsii-pacmak": "^1.127.0",
-    "jsii-rosetta": "~5.9.0",
     "prettier": "^3.8.1",
     "projen": "0.98.1",
     "ts-jest": "^29.4.6",
@@ -66,10 +59,6 @@
     "@dprint/formatter": "^0.5.1",
     "@dprint/typescript": "^0.95.15"
   },
-  "bundledDependencies": [
-    "@dprint/formatter",
-    "@dprint/typescript"
-  ],
   "pnpm": {},
   "keywords": [
     "projen"
@@ -126,15 +115,6 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "stable",
-  "jsii": {
-    "outdir": "dist",
-    "targets": {},
-    "tsc": {
-      "outDir": "lib",
-      "rootDir": "src"
-    }
-  },
   "exports": {
     ".": "./lib/index.js",
     "./typescript": "./lib/typescript/index.js",

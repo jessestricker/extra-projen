@@ -3,6 +3,9 @@ import { NodeProject } from "projen/lib/javascript";
 import { EslintConfigObject } from "./eslint-config";
 import { JavaScriptFile } from "./javascript-file";
 
+/**
+ * The options for {@link Eslint}.
+ */
 export interface EslintOptions {
   /**
    * An array of files, directories or glob patterns on which to run ESLint.
@@ -40,6 +43,14 @@ export interface EslintOptions {
   readonly extraConfig?: EslintConfigObject[];
 }
 
+/**
+ * An alternative to the builtin ESLint component,
+ * with the following differences:
+ *
+ * - Supports modern ESLint versions (v10+).
+ * - Supports the flat ESLint config file.
+ * - Is only concerned with linting, does not do formatting.
+ */
 export class Eslint extends Component {
   readonly files: string[];
   readonly typescriptEslint: boolean;

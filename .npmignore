@@ -19,8 +19,8 @@ dist
 /.idea/
 /.projenrc.js
 tsconfig.tsbuildinfo
-/.eslintrc.json
 !.jsii
+eslint.config.mjs
 /.prettierignore
 /.prettierrc.yml
 /.gitattributes

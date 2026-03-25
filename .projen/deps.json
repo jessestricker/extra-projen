@@ -1,21 +1,16 @@
 {
   "dependencies": [
     {
+      "name": "@eslint/js",
+      "version": "^10",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
     {
       "name": "@types/node",
-      "type": "build"
-    },
-    {
-      "name": "@typescript-eslint/eslint-plugin",
-      "version": "^8",
-      "type": "build"
-    },
-    {
-      "name": "@typescript-eslint/parser",
-      "version": "^8",
       "type": "build"
     },
     {
@@ -29,24 +24,8 @@
       "type": "build"
     },
     {
-      "name": "eslint-config-prettier",
-      "type": "build"
-    },
-    {
-      "name": "eslint-import-resolver-typescript",
-      "type": "build"
-    },
-    {
-      "name": "eslint-plugin-import",
-      "type": "build"
-    },
-    {
-      "name": "eslint-plugin-prettier",
-      "type": "build"
-    },
-    {
       "name": "eslint",
-      "version": "^9",
+      "version": "^10",
       "type": "build"
     },
     {
@@ -97,11 +76,20 @@
       "type": "build"
     },
     {
+      "name": "typescript-eslint",
+      "version": "^8",
+      "type": "build"
+    },
+    {
       "name": "@dprint/formatter",
       "type": "bundled"
     },
     {
       "name": "@dprint/typescript",
+      "type": "bundled"
+    },
+    {
+      "name": "type-fest",
       "type": "bundled"
     },
     {

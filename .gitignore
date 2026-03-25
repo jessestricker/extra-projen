@@ -45,10 +45,10 @@ junit.xml
 !/src/
 /lib
 /dist/
-!/.eslintrc.json
 .jsii
 tsconfig.json
 !/pnpm-workspace.yaml
+!/eslint.config.mjs
 !/.prettierignore
 !/.prettierrc.yml
 !/.projenrc.ts

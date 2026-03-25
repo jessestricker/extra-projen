@@ -2,7 +2,7 @@ import { YamlFile } from "projen";
 import { JsiiProject } from "projen/lib/cdk";
 import { GithubCredentials } from "projen/lib/github";
 import { NodePackageManager, NpmAccess } from "projen/lib/javascript";
-import { Prettier } from "./src/javascript/prettier";
+import { Eslint, Prettier } from "./src/javascript";
 import { GeneratePackageExports } from "./src/typescript/generate-package-exports";
 
 const project = new JsiiProject({
@@ -20,7 +20,7 @@ const project = new JsiiProject({
   peerDeps: ["constructs@^10", "projen@>=0.98.1 <1.0.0"],
   jsiiVersion: "~5.9.0",
   docgen: false,
-  bundledDeps: ["@dprint/formatter", "@dprint/typescript"],
+  bundledDeps: ["@dprint/formatter", "@dprint/typescript", "type-fest"],
 
   // projen
   projenCommand: "pnpx projen",
@@ -28,7 +28,7 @@ const project = new JsiiProject({
   sampleCode: false,
 
   // formatting & linting
-  eslintOptions: { dirs: ["src"], prettier: true },
+  eslint: false,
 
   // git & github
   gitignore: [".idea/"],
@@ -50,7 +50,18 @@ const project = new JsiiProject({
 new YamlFile(project, "pnpm-workspace.yaml", {
   obj: { nodeLinker: "hoisted" },
 });
-new Prettier(project, { yaml: true });
+
+new Eslint(project, {
+  files: [project.srcdir, project.testdir, ".projenrc.ts"],
+  typescriptEslint: true,
+  typescriptEslintStrict: true,
+  typescriptEslintStylistic: true,
+});
+
+new Prettier(project, {
+  yaml: true,
+});
+
 new GeneratePackageExports(project);
 
 project.synth();

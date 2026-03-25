@@ -1,6 +1,5 @@
 {
   "files": [
-    ".eslintrc.json",
     ".gitattributes",
     ".github/workflows/build.yml",
     ".github/workflows/pull-request-lint.yml",
@@ -13,6 +12,7 @@
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
+    "eslint.config.mjs",
     "LICENSE",
     "pnpm-workspace.yaml",
     "tsconfig.dev.json"

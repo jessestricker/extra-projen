@@ -32,24 +32,20 @@
     "organization": false
   },
   "devDependencies": {
+    "@eslint/js": "^10",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.12.0",
-    "@typescript-eslint/eslint-plugin": "^8",
-    "@typescript-eslint/parser": "^8",
     "commit-and-tag-version": "^12",
     "constructs": "10.0.0",
-    "eslint": "^9",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.5",
+    "eslint": "^10",
     "jest": "^30.3.0",
     "jest-junit": "^16",
     "prettier": "^3.8.1",
     "projen": "0.98.1",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8"
   },
   "peerDependencies": {
     "constructs": "^10",
@@ -57,7 +53,8 @@
   },
   "dependencies": {
     "@dprint/formatter": "^0.5.1",
-    "@dprint/typescript": "^0.95.15"
+    "@dprint/typescript": "^0.95.15",
+    "type-fest": "^4.41.0"
   },
   "pnpm": {},
   "keywords": [

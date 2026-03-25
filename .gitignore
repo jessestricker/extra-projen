@@ -46,7 +46,7 @@ junit.xml
 !/src/
 /lib
 /dist/
-!/.eslintrc.json
+!/eslint.config.mjs
 !/.prettierignore
 !/.prettierrc.yml
 !/.projenrc.ts

@@ -106,14 +106,10 @@
     },
     "eslint": {
       "name": "eslint",
-      "description": "Runs eslint against the codebase",
-      "env": {
-        "ESLINT_USE_FLAT_CONFIG": "false",
-        "NODE_NO_WARNINGS": "1"
-      },
+      "description": "Check project files with ESLint",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
+          "exec": "eslint --fix src test .projenrc.ts",
           "receiveArgs": true
         }
       ]
@@ -243,13 +239,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jest,prettier,projen,ts-jest,ts-node,typescript,@dprint/formatter,@dprint/typescript"
+          "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,jest,prettier,projen,ts-jest,ts-node,typescript,@dprint/formatter,@dprint/typescript,type-fest"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit prettier projen ts-jest ts-node typescript @dprint/formatter @dprint/typescript"
+          "exec": "pnpm update @eslint/js @types/jest @types/node commit-and-tag-version constructs eslint jest jest-junit prettier projen ts-jest ts-node typescript typescript-eslint @dprint/formatter @dprint/typescript type-fest"
         },
         {
           "exec": "pnpx projen"

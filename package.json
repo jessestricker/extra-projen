@@ -34,7 +34,7 @@
   "devDependencies": {
     "@eslint/js": "^10",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.12.0",
+    "@types/node": "^24.12.2",
     "commit-and-tag-version": "^12",
     "constructs": "10.0.0",
     "eslint": "^10",
@@ -42,7 +42,7 @@
     "jest-junit": "^16",
     "prettier": "^3.8.1",
     "projen": "0.98.1",
-    "ts-jest": "^29.4.6",
+    "ts-jest": "^29.4.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8"

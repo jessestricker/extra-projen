@@ -6,6 +6,11 @@
       "type": "build"
     },
     {
+      "name": "@microsoft/api-extractor",
+      "version": "^7",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },

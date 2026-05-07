@@ -1,5 +1,20 @@
 {
   "tasks": {
+    "api-extractor": {
+      "name": "api-extractor",
+      "description": "Generate the API report with api-extractor",
+      "steps": [
+        {
+          "spawn": "compile"
+        },
+        {
+          "exec": "mkdir --parents etc"
+        },
+        {
+          "exec": "api-extractor run --config api-extractor.jsonc --local --verbose"
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -203,6 +218,9 @@
         },
         {
           "spawn": "prettier"
+        },
+        {
+          "spawn": "api-extractor"
         }
       ]
     },
@@ -247,7 +265,7 @@
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @eslint/js @types/jest @types/node commit-and-tag-version constructs eslint jest jest-junit prettier projen ts-jest ts-node typescript typescript-eslint @dprint/formatter @dprint/typescript type-fest"
+          "exec": "pnpm update @eslint/js @microsoft/api-extractor @types/jest @types/node commit-and-tag-version constructs eslint jest jest-junit prettier projen ts-jest ts-node typescript typescript-eslint @dprint/formatter @dprint/typescript type-fest"
         },
         {
           "exec": "pnpm exec projen"

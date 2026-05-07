@@ -11,6 +11,7 @@ import {
  * - Ignores the Node.js package manager lockfile.
  * - Ignores all projen-managed files.
  * - Adds a `prettier` task and runs it as part of the `test` task.
+ * @public
  */
 export class Prettier extends BuiltinPrettier {
   readonly task: Task;

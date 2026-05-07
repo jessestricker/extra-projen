@@ -4,6 +4,9 @@ import { Component } from "projen";
 import { TypeScriptProject } from "projen/lib/typescript";
 import { normalizePersistedPath } from "projen/lib/util";
 
+/**
+ * @public
+ */
 export class GeneratePackageExports extends Component {
   constructor(project: TypeScriptProject) {
     super(project);

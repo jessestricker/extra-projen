@@ -16,6 +16,7 @@
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
 /.vscode/settings.json linguist-generated
+/api-extractor.jsonc linguist-generated linguist-language=JSON-with-Comments
 /eslint.config.mjs linguist-generated
 /LICENSE linguist-generated
 /package.json linguist-generated

@@ -45,6 +45,7 @@ junit.xml
 !/src/
 /lib
 /dist/
+!/.vscode/settings.json
 !/eslint.config.mjs
 !/.prettierignore
 !/.prettierrc.yml

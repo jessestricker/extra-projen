@@ -63,6 +63,11 @@ const project = new TypeScriptProject({
   releaseToNpm: true,
 });
 
+project.vscode?.settings.addSetting(
+  "js/ts.tsdk.path",
+  "node_modules/typescript/lib",
+);
+
 new Eslint(project, {
   files: [project.srcdir, project.testdir, ".projenrc.ts"],
   typescriptEslint: true,

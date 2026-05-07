@@ -87,7 +87,13 @@ new YamlFile(project, "pnpm-workspace.yaml", {
   },
 });
 
-const apiExtractor = new ApiExtractor(project);
+const apiExtractor = new ApiExtractor(project, {
+  extractorMessageReporting: {
+    "ae-unresolved-link": {
+      logLevel: "none",
+    },
+  },
+});
 prettier.addIgnorePattern(`/${apiExtractor.reportFile}`);
 
 project.synth();

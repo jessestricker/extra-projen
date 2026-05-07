@@ -25,6 +25,17 @@ export interface ApiExtractorOptions {
    * @default "etc"
    */
   readonly reportFolder?: string;
+
+  /**
+   * @defaultValue see {@link https://github.com/microsoft/rushstack/blob/main/apps/api-extractor/src/schemas/api-extractor-defaults.json}.
+   */
+  readonly extractorMessageReporting?: Record<
+    string,
+    {
+      readonly logLevel?: "error" | "warning" | "none";
+      readonly addToApiReportFile?: boolean;
+    }
+  >;
 }
 
 /**
@@ -48,6 +59,7 @@ export class ApiExtractor extends Component {
       apiExtractorVersion = "^7",
       reportFileName = unscopedPackageName(project.package.packageName),
       reportFolder = "etc",
+      extractorMessageReporting,
     } = options;
 
     this.mainEntryPointFilePath =
@@ -78,11 +90,7 @@ export class ApiExtractor extends Component {
               logLevel: "warning",
             },
           },
-          extractorMessageReporting: {
-            default: {
-              logLevel: "warning",
-            },
-          },
+          extractorMessageReporting,
           tsdocMessageReporting: {
             default: {
               logLevel: "warning",

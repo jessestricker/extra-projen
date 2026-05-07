@@ -34,6 +34,12 @@ class ApiExtractor extends Component {
 // @public
 interface ApiExtractorOptions {
     readonly apiExtractorVersion?: string;
+    // (undocumented)
+    readonly extractorMessageReporting?: Record<string, {
+        readonly logLevel?: "error" | "warning" | "none";
+        readonly addToApiReportFile?: boolean;
+    }>;
+    // (undocumented)
     readonly mainEntryPointFilePath?: string;
     readonly reportFileName?: string;
     readonly reportFolder?: string;

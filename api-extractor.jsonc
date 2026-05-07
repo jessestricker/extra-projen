@@ -20,8 +20,8 @@
       }
     },
     "extractorMessageReporting": {
-      "default": {
-        "logLevel": "warning"
+      "ae-unresolved-link": {
+        "logLevel": "none"
       }
     },
     "tsdocMessageReporting": {

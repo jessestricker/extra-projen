@@ -45,14 +45,14 @@ importers:
         specifier: ^30.4.0
         version: 30.4.0(@types/node@24.12.2)(ts-node@10.9.2(@types/node@24.12.2)(typescript@5.9.3))
       jest-junit:
-        specifier: ^16
-        version: 16.0.0
+        specifier: ^17
+        version: 17.0.0
       prettier:
         specifier: ^3.8.3
         version: 3.8.3
       projen:
-        specifier: 0.98.1
-        version: 0.98.1(constructs@10.0.0)
+        specifier: 0.99.57
+        version: 0.99.57(constructs@10.0.0)
       ts-jest:
         specifier: ^29.4.9
         version: 29.4.9(@babel/core@7.28.4)(@jest/transform@30.4.0)(@jest/types@30.4.0)(babel-jest@30.4.0(@babel/core@7.28.4))(jest-util@30.4.0)(jest@30.4.0(@types/node@24.12.2)(ts-node@10.9.2(@types/node@24.12.2)(typescript@5.9.3)))(typescript@5.9.3)
@@ -1489,9 +1489,9 @@ packages:
     resolution: {integrity: sha512-01+o3CS8t35Va0Ed6w/HyeK9VaejRlBnZ1hGoOlTYlruFzycn3RfIdG1Szu1DVoACTs07ALirRjECq1FqNuAFg==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
-  jest-junit@16.0.0:
-    resolution: {integrity: sha512-A94mmw6NfJab4Fg/BlvVOUXzXgF0XIH6EmTgJ5NDPp4xoKq0Kr7sErb+4Xs9nZvu58pJojz5RFGpqnZYJTrRfQ==}
-    engines: {node: '>=10.12.0'}
+  jest-junit@17.0.0:
+    resolution: {integrity: sha512-RYWCkq4j59gUXj5DsgbIE7xFBZzu1gtibPhyjSjMmGaOTLnqlXhg7x9zuGCwgbCuMAyoyvk0Mi8wSrRR5uOeLA==}
+    engines: {node: '>=20.0.0'}
 
   jest-leak-detector@30.4.0:
     resolution: {integrity: sha512-n9beq0bFyt2m17RSjo6n8RsZiE1w+sOfr+p1J0aYTBXoxd/4hZeK2M7GQENKtslIsGVu2xOrNEe10CTmQfO8Mw==}
@@ -1920,8 +1920,8 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  projen@0.98.1:
-    resolution: {integrity: sha512-4O+Xd2m5SViofNayF4aWARtYb7wpIRmBJnAYONdqriIyrhwIP80XMwcDT3CByxIYgsMjPY6eEmbVs7oysnxfCA==}
+  projen@0.99.57:
+    resolution: {integrity: sha512-1IWwvGnrI1lQ+dnYoAIdACZn0iXY2CqQaMlAVkicDNq7OYipQIMQccMWdnxPkwGj+AX7wS2bZqEULa++ujMXOw==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2295,9 +2295,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
-    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+  uuid@14.0.0:
+    resolution: {integrity: sha512-Qo+uWgilfSmAhXCMav1uYFynlQO7fMFiMVZsQqZRMIXp0O7rR7qjkj+cPvBHLgBqi960QCoo/PH2/6ZtVqKvrg==}
     hasBin: true
 
   v8-compile-cache-lib@3.0.1:
@@ -4027,11 +4026,11 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  jest-junit@16.0.0:
+  jest-junit@17.0.0:
     dependencies:
       mkdirp: 1.0.4
       strip-ansi: 6.0.1
-      uuid: 8.3.2
+      uuid: 14.0.0
       xml: 1.0.1
 
   jest-leak-detector@30.4.0:
@@ -4550,7 +4549,7 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.98.1(constructs@10.0.0):
+  projen@0.99.57(constructs@10.0.0):
     dependencies:
       constructs: 10.0.0
 
@@ -4896,7 +4895,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@8.3.2: {}
+  uuid@14.0.0: {}
 
   v8-compile-cache-lib@3.0.1: {}
 

@@ -21,14 +21,17 @@ const project = new TypeScriptProject({
 
   // node package & dependencies
   packageManager: NodePackageManager.PNPM,
-  peerDeps: ["constructs@^10", "projen@>=0.98.1 <1.0.0"],
+  peerDeps: ["constructs@^10", "projen@>=0.99.57 <1.0.0"],
   deps: ["@dprint/formatter", "@dprint/typescript", "type-fest"],
 
   // typescript
-  tsconfig: { compilerOptions: { skipLibCheck: true } },
+  tsconfig: {
+    compilerOptions: {
+      skipLibCheck: true,
+    },
+  },
 
   // projen
-  projenCommand: "pnpx projen",
   projenrcTs: true,
   sampleCode: false,
 

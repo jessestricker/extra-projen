@@ -22,6 +22,8 @@ tsconfig.tsbuildinfo
 eslint.config.mjs
 /.prettierignore
 /.prettierrc.yml
+/temp/
+api-extractor.jsonc
 /.gitattributes
 /.projenrc.ts
 /projenrc

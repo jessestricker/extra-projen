@@ -115,6 +115,8 @@ export class ApiExtractor extends Component {
     project.testTask.spawn(this.task);
 
     project.addGitIgnore("/temp/");
+    project.addPackageIgnore("/temp/");
+    project.addPackageIgnore(this.configFile.path);
   }
 }
 

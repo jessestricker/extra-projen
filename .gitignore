@@ -49,4 +49,6 @@ junit.xml
 !/.prettierignore
 !/.prettierrc.yml
 !/pnpm-workspace.yaml
+!/api-extractor.jsonc
+/temp/
 !/.projenrc.ts

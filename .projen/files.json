@@ -12,6 +12,7 @@
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
+    "api-extractor.jsonc",
     "eslint.config.mjs",
     "LICENSE",
     "pnpm-workspace.yaml",

@@ -7,6 +7,7 @@ import {
 } from "projen/lib/javascript";
 import { TypeScriptProject } from "projen/lib/typescript";
 import { Eslint, Prettier } from "./src/javascript";
+import { ApiExtractor } from "./src/typescript/api-extractor";
 import { GeneratePackageExports } from "./src/typescript/generate-package-exports";
 
 const project = new TypeScriptProject({
@@ -69,7 +70,7 @@ new Eslint(project, {
   typescriptEslintStylistic: true,
 });
 
-new Prettier(project, {
+const prettier = new Prettier(project, {
   yaml: true,
 });
 
@@ -85,5 +86,8 @@ new YamlFile(project, "pnpm-workspace.yaml", {
     strictPeerDependencies: true,
   },
 });
+
+const apiExtractor = new ApiExtractor(project);
+prettier.addIgnorePattern(`/${apiExtractor.reportFile}`);
 
 project.synth();

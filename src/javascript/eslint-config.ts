@@ -6,6 +6,7 @@ import { JsonValue } from "type-fest";
  * An ESLint configuration object.
  *
  * @see https://eslint.org/docs/latest/use/configure/configuration-files#configuration-objects
+ * @public
  */
 export interface EslintConfigObject {
   /**
@@ -43,9 +44,15 @@ export interface EslintConfigObject {
 }
 
 // https://github.com/eslint/rewrite/blob/core-v1.1.1/packages/core/src/types.ts#L719
+/**
+ * @public
+ */
 export type EslintRuleConfig =
   | EslintSeverity
   | readonly [EslintSeverity, ...JsonValue[]];
 
 // https://github.com/eslint/rewrite/blob/core-v1.1.1/packages/core/src/types.ts#L675
+/**
+ * @public
+ */
 export type EslintSeverity = "off" | "warn" | "error";

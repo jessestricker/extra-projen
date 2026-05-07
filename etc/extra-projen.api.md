@@ -33,6 +33,7 @@ class ApiExtractor extends Component {
 
 // @public
 interface ApiExtractorOptions {
+    // (undocumented)
     readonly apiExtractorVersion?: string;
     // (undocumented)
     readonly extractorMessageReporting?: Record<string, {
@@ -41,7 +42,9 @@ interface ApiExtractorOptions {
     }>;
     // (undocumented)
     readonly mainEntryPointFilePath?: string;
+    // (undocumented)
     readonly reportFileName?: string;
+    // (undocumented)
     readonly reportFolder?: string;
 }
 
@@ -75,12 +78,18 @@ interface EslintConfigObject {
 
 // @public
 interface EslintOptions {
+    // (undocumented)
     readonly eslintVersion?: string;
+    // (undocumented)
     readonly extraConfig?: EslintConfigObject[];
     readonly files: string[];
+    // (undocumented)
     readonly typescriptEslint?: boolean;
+    // (undocumented)
     readonly typescriptEslintStrict?: boolean;
+    // (undocumented)
     readonly typescriptEslintStylistic?: boolean;
+    // (undocumented)
     readonly typescriptEslintVersion?: string;
 }
 

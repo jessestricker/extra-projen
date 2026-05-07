@@ -4,25 +4,26 @@ import { TypeScriptProject } from "projen/lib/typescript";
 
 /**
  * The options for {@link ApiExtractor}.
+ * @public
  */
 export interface ApiExtractorOptions {
   /**
-   * @default "^7"
+   * @defaultValue `"^7"`
    */
   readonly apiExtractorVersion?: string;
 
   /**
-   * @default - based on package entrypoint
+   * @defaultValue A `.d.ts` file path, based on the Node package's entrypoint.
    */
   readonly mainEntryPointFilePath?: string;
 
   /**
-   * @default - the unscoped package name
+   * @defaultValue The unscoped package name.
    */
   readonly reportFileName?: string;
 
   /**
-   * @default "etc"
+   * @defaultValue `"etc"`
    */
   readonly reportFolder?: string;
 
@@ -46,6 +47,7 @@ export interface ApiExtractorOptions {
  * During code review, this can help verify whether all proposed changes to the API are intended.
  *
  * In addition, api-extractor generates warnings for missing exports, unknown TSDoc tags and more.
+ * @public
  */
 export class ApiExtractor extends Component {
   readonly mainEntryPointFilePath: string;

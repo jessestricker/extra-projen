@@ -6,11 +6,12 @@ import { IResolver, TextFile, TextFileOptions } from "projen";
 
 /**
  * The options for {@link JavaScriptFile}.
+ * @public
  */
 export interface JavaScriptFileOptions extends TextFileOptions {
   /**
    * Whether to format the synthesized content.
-   * @default true
+   * @defaultValue `true`
    */
   readonly format?: boolean;
 }
@@ -19,6 +20,7 @@ export interface JavaScriptFileOptions extends TextFileOptions {
  * A text file containing JavaScript (or TypeScript) code.
  *
  * Supports auto-formatting the synthesized content.
+ * @public
  */
 export class JavaScriptFile extends TextFile {
   readonly format: boolean;
@@ -58,9 +60,10 @@ let FORMATTER: dprintFormatter.Formatter | undefined = undefined;
 /**
  * Formats JavaScript (or TypeScript) code using [dprint](https://github.com/dprint/dprint-plugin-typescript).
  *
- * @param text The text to format.
- * @param filePath The path of the source file. Only used for configuring the dprint formatter, does not need to actually exist.
+ * @param text - The text to format.
+ * @param filePath - The path of the source file. Only used for configuring the dprint formatter, does not need to actually exist.
  * @returns The formated text.
+ * @public
  */
 export function formatJavaScript(text: string, filePath: string): string {
   if (FORMATTER === undefined) {

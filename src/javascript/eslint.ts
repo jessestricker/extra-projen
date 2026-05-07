@@ -5,6 +5,7 @@ import { JavaScriptFile } from "./javascript-file";
 
 /**
  * The options for {@link Eslint}.
+ * @public
  */
 export interface EslintOptions {
   /**
@@ -13,32 +14,32 @@ export interface EslintOptions {
   readonly files: string[];
 
   /**
-   * @default "^10"
+   * @defaultValue `"^10"`
    */
   readonly eslintVersion?: string;
 
   /**
-   * @default false
+   * @defaultValue `false`
    */
   readonly typescriptEslint?: boolean;
 
   /**
-   * @default "^8"
+   * @defaultValue `"^8"`
    */
   readonly typescriptEslintVersion?: string;
 
   /**
-   * @default false
+   * @defaultValue `false`
    */
   readonly typescriptEslintStrict?: boolean;
 
   /**
-   * @default false
+   * @defaultValue `false`
    */
   readonly typescriptEslintStylistic?: boolean;
 
   /**
-   * @default []
+   * @defaultValue `[]`
    */
   readonly extraConfig?: EslintConfigObject[];
 }
@@ -50,6 +51,7 @@ export interface EslintOptions {
  * - Supports modern ESLint versions (v10+).
  * - Supports the flat ESLint config file.
  * - Is only concerned with linting, does not do formatting.
+ * @public
  */
 export class Eslint extends Component {
   readonly files: string[];

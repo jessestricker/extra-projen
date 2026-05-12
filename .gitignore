@@ -49,6 +49,9 @@ junit.xml
 !/eslint.config.mjs
 !/.prettierignore
 !/.prettierrc.yml
+!/src/index.ts
+!/src/javascript/index.ts
+!/src/typescript/index.ts
 !/pnpm-workspace.yaml
 !/api-extractor.jsonc
 /temp/

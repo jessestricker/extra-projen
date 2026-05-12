@@ -17,6 +17,9 @@
     "eslint.config.mjs",
     "LICENSE",
     "pnpm-workspace.yaml",
+    "src/index.ts",
+    "src/javascript/index.ts",
+    "src/typescript/index.ts",
     "tsconfig.dev.json",
     "tsconfig.json"
   ],

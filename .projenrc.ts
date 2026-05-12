@@ -9,6 +9,7 @@ import { TypeScriptProject } from "projen/lib/typescript";
 import { Eslint, Prettier } from "./src/javascript";
 import { ApiExtractor } from "./src/typescript/api-extractor";
 import { GeneratePackageExports } from "./src/typescript/generate-package-exports";
+import { GenerateIndexFiles } from "./src/typescript/generate-index-files";
 
 const project = new TypeScriptProject({
   // meta
@@ -79,6 +80,7 @@ const prettier = new Prettier(project, {
   yaml: true,
 });
 
+new GenerateIndexFiles(project);
 new GeneratePackageExports(project);
 
 new YamlFile(project, "pnpm-workspace.yaml", {

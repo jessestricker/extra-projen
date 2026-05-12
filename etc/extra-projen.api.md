@@ -103,6 +103,11 @@ type EslintSeverity = "off" | "warn" | "error";
 function formatJavaScript(text: string, filePath: string): string;
 
 // @public (undocumented)
+class GenerateIndexFiles extends Component {
+    constructor(project: TypeScriptProject);
+}
+
+// @public (undocumented)
 class GeneratePackageExports extends Component {
     constructor(project: TypeScriptProject);
 }
@@ -148,6 +153,7 @@ declare namespace typescript {
     export {
         ApiExtractorOptions,
         ApiExtractor,
+        GenerateIndexFiles,
         GeneratePackageExports
     }
 }

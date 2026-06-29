@@ -48,8 +48,7 @@ export interface EslintConfigObject {
  * @public
  */
 export type EslintRuleConfig =
-  | EslintSeverity
-  | readonly [EslintSeverity, ...JsonValue[]];
+  EslintSeverity | readonly [EslintSeverity, ...JsonValue[]];
 
 // https://github.com/eslint/rewrite/blob/core-v1.1.1/packages/core/src/types.ts#L675
 /**
